@@ -27,7 +27,7 @@ public class Globals {
     public static List<GameEntity> oldGameObjects; // Holds game objects that will be destroyed this frame.
     public static GameLoop gameLoop;
 
-    static {
+    static {  //why no public?
         gameObjects = new LinkedList<>();
         newGameObjects = new LinkedList<>();
         oldGameObjects = new LinkedList<>();
@@ -44,4 +44,6 @@ public class Globals {
     public static List<GameEntity> getGameObjects() {
         return Collections.unmodifiableList(gameObjects);
     }
+    //why we need this getter?
+    //nem értjük
 }

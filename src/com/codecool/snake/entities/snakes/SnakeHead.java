@@ -42,6 +42,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         setY(getY() + heading.getY());
 
         // check if collided with an enemy or a powerup
+        // ez jó helyen lakik-e ez a collide?
         for (GameEntity entity : Globals.getGameObjects()) {
             if (getBoundsInParent().intersects(entity.getBoundsInParent())) {
                 if (entity instanceof Interactable) {

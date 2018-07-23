@@ -11,7 +11,7 @@ public class Game extends Pane {
     public Game() {
         new SnakeHead(this, 500, 500);
 
-        new SimpleEnemy(this);
+        new SimpleEnemy(this);  //why not a for/while loop?
         new SimpleEnemy(this);
         new SimpleEnemy(this);
         new SimpleEnemy(this);

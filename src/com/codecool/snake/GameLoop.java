@@ -8,7 +8,7 @@ public class GameLoop extends AnimationTimer {
 
     // This gets called every 1/60 seconds
     @Override
-    public void handle(long now) {
+    public void handle(long now) {  //what is the now parameter?
         for (GameEntity gameObject : Globals.gameObjects) {
             if (gameObject instanceof Animatable) {
                 Animatable animObject = (Animatable)gameObject;
