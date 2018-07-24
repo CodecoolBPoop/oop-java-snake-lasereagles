@@ -12,43 +12,35 @@ import javafx.scene.layout.Pane;
 import java.util.Random;
 
 // a simple enemy TODO make better ones.
-public class SimpleEnemy extends GameEntity implements Animatable, Interactable {
-
-    private Point2D heading;
-    private static final int damage = 10;
+public class SimpleEnemy extends Enemy implements Animatable, Interactable {
 
     public SimpleEnemy(Pane pane) {
         super(pane);
+        this.damage = 10;
 
         setImage(Globals.simpleEnemy);
         pane.getChildren().add(this);
-        int speed = 1;
-        Random rnd = new Random();
-        setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
-        setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
-
-        double direction = rnd.nextDouble() * 360;
-        setRotate(direction);
-        heading = Utils.directionToVector(direction, speed);  //what is the difference between line 31 and 32?
+        this.speed = 1;
+        this.setPosition();
+        this.setDirection();
+        //System.out.println(this.positionX + " " + this.direction);
     }
 
     @Override
-    public void step() {
-        if (isOutOfBounds()) {
-            destroy();
+    public void step(){
+        if(isOutOfBounds()){
+            this.setDirection();
         }
-        setX(getX() + heading.getX());
-        setY(getY() + heading.getY());
+        this.setX(getX() + this.heading.getX());
+        this.setY(getY() + this.heading.getY());
     }
 
     @Override
     public void apply(SnakeHead player) {
-        player.changeHealth(-damage);
+        player.changeHealth(-this.damage);
         destroy();
     }
 
     @Override
-    public String getMessage() {
-        return "10 damage";
-    }
+    public String getMessage(){return "10 damage"; }
 }
