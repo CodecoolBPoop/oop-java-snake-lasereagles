@@ -1,7 +1,9 @@
 package com.codecool.snake;
 
-import com.codecool.snake.entities.enemies.BugEnemy;
+import com.codecool.snake.entities.enemies.Facebook;
+import com.codecool.snake.entities.enemies.LinkedIn;
 import com.codecool.snake.entities.enemies.SimpleEnemy;
+import com.codecool.snake.entities.enemies.Spotify;
 import com.codecool.snake.entities.powerups.SimplePowerup;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.Scene;
@@ -17,7 +19,9 @@ public class Game extends Pane {
         new SimpleEnemy(this);
         new SimpleEnemy(this);
 
-        new BugEnemy(this);
+        new LinkedIn(this);
+        new Facebook(this);
+        new Spotify(this);
 
         new SimplePowerup(this);
         new SimplePowerup(this);

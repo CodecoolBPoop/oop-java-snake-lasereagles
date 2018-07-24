@@ -6,16 +6,16 @@ import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
-public class BugEnemy extends Enemy implements Animatable, Interactable {
+public class LinkedIn extends Enemy implements Animatable, Interactable {
 
 
-    public BugEnemy(Pane pane) {
+    public LinkedIn(Pane pane) {
         super(pane);
-        this.damage = 15;
+        this.damage = 20;
 
-        setImage(Globals.bugEnemy);
+        setImage(Globals.linkedIn);
         pane.getChildren().add(this);
-        this.speed = 1;
+        this.speed = 3;
         this.setPosition();
         this.setDirection();
         //System.out.println(this.positionX + " " + this.direction);
@@ -37,6 +37,6 @@ public class BugEnemy extends Enemy implements Animatable, Interactable {
     }
 
     @Override
-    public String getMessage(){return "15 damage"; }
+    public String getMessage(){return "20 damage"; }
 
 }
