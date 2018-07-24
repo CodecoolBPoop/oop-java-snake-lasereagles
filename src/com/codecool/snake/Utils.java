@@ -16,15 +16,4 @@ public class Utils {
         return heading;
     }
 
-
-    public static Position getSnakePos(Pane pane) {
-        int index = pane.getChildren().indexOf(SnakeHead.snakeHead);
-        SnakeHead snake = (SnakeHead) pane.getChildren().get(index);
-        return new Position(snake.getX(), snake.getY());
-    }
-
-    public int getFreeQuadrant() {
-        return 1;
-    }
-
 }

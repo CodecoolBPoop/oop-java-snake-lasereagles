@@ -31,10 +31,10 @@ public class SimpleEnemy extends GameEntity implements Animatable, Interactable 
     }
 
     public void setSpawnPos() {
-        //double ProtectedX = Utils.getSnakePos(pane);
+        //double ProtectedX = Position.getSnakePos(pane);
 
-
-       // getAvailableSpawnQuadrant();
+        //in utils?: in a while loop:
+        //gen coords, check snakehead coords, compare ratio, if bigger allow spanw, if not gen new spawn coord
 
         setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
         setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
