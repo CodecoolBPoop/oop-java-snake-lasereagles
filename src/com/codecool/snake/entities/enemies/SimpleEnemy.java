@@ -11,7 +11,6 @@ public class SimpleEnemy extends Enemy {
     public SimpleEnemy(Pane pane) {
         super(pane);
         this.setDamage(10);
-
         setImage(Globals.simpleEnemy);
         pane.getChildren().add(this);
         this.setSpeed(1);

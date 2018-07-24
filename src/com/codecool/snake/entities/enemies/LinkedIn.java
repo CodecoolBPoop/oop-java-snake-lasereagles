@@ -7,7 +7,6 @@ import javafx.scene.layout.Pane;
 
 public class LinkedIn extends Enemy {
 
-
     public LinkedIn(Pane pane) {
         super(pane);
         this.setDamage(20);

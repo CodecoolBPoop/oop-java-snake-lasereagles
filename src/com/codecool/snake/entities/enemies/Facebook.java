@@ -7,7 +7,6 @@ import javafx.scene.layout.Pane;
 
 public class Facebook extends Enemy {
 
-
     public Facebook(Pane pane) {
         super(pane);
         this.setDamage(15);
