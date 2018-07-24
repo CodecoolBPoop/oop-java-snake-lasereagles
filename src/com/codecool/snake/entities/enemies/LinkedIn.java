@@ -10,17 +10,17 @@ public class LinkedIn extends Enemy implements Interactable {
 
     public LinkedIn(Pane pane) {
         super(pane);
-        this.damage = 20;
+        this.setDamage(20);
         setImage(Globals.linkedIn);
         pane.getChildren().add(this);
-        this.speed = 3;
+        this.setSpeed(3);
         this.setPosition();
         this.setDirection();
     }
 
     @Override
     public void apply(SnakeHead player) {
-        player.changeHealth(-this.damage);
+        player.changeHealth(-this.getDamage());
         destroy();
     }
 

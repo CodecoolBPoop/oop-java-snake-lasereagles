@@ -10,17 +10,17 @@ public class Spotify extends Enemy implements Interactable {
 
     public Spotify(Pane pane) {
         super(pane);
-        this.damage = 25;
+        this.setDamage(25);
         setImage(Globals.spotify);
         pane.getChildren().add(this);
-        this.speed = 2;
+        this.setSpeed(2);
         this.setPosition();
         this.setDirection();
     }
 
     @Override
     public void apply(SnakeHead player) {
-        player.changeHealth(-this.damage);
+        player.changeHealth(-this.getDamage());
         destroy();
     }
 

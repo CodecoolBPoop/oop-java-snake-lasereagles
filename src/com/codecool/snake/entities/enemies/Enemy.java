@@ -12,9 +12,9 @@ import javafx.scene.layout.Pane;
 public class Enemy extends GameEntity implements Animatable {
 
     protected Point2D heading;
-    int damage;
-    double direction;
-    int speed;
+    private int damage;
+    private double direction;
+    private int speed;
 
     public Enemy(Pane pane) {
         super(pane);
@@ -29,6 +29,18 @@ public class Enemy extends GameEntity implements Animatable {
         this.direction = RandomNumber.getRandomDouble() * 360;
         this.setRotate(this.direction);
         this.heading = Utils.directionToVector(this.direction, this.speed);  //what is the difference between line 31 and 32?
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getDamage() {
+        return damage;
     }
 
     @Override

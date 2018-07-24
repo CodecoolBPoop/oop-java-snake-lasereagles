@@ -10,18 +10,18 @@ public class SimpleEnemy extends Enemy implements Interactable {
 
     public SimpleEnemy(Pane pane) {
         super(pane);
-        this.damage = 10;
+        this.setDamage(10);
 
         setImage(Globals.simpleEnemy);
         pane.getChildren().add(this);
-        this.speed = 1;
+        this.setSpeed(1);
         this.setPosition();
         this.setDirection();
     }
 
     @Override
     public void apply(SnakeHead player) {
-        player.changeHealth(-this.damage);
+        player.changeHealth(-this.getDamage());
         destroy();
     }
 

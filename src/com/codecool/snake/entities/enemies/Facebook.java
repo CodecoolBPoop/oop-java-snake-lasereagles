@@ -10,17 +10,17 @@ public class Facebook extends Enemy implements Interactable {
 
     public Facebook(Pane pane) {
         super(pane);
-        this.damage = 15;
+        this.setDamage(15);
         setImage(Globals.facebook);
         pane.getChildren().add(this);
-        this.speed = 1;
+        this.setSpeed(1);
         this.setPosition();
         this.setDirection();
     }
 
     @Override
     public void apply(SnakeHead player) {
-        player.changeHealth(-this.damage);
+        player.changeHealth(-this.getDamage());
         destroy();
     }
 
