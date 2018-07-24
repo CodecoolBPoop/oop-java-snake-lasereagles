@@ -11,7 +11,6 @@ public class Facebook extends Enemy implements Interactable {
     public Facebook(Pane pane) {
         super(pane);
         this.damage = 15;
-
         setImage(Globals.facebook);
         pane.getChildren().add(this);
         this.speed = 1;

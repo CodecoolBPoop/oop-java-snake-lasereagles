@@ -11,7 +11,6 @@ public class LinkedIn extends Enemy implements Interactable {
     public LinkedIn(Pane pane) {
         super(pane);
         this.damage = 20;
-
         setImage(Globals.linkedIn);
         pane.getChildren().add(this);
         this.speed = 3;

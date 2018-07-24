@@ -6,7 +6,6 @@ import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
 
-// a simple enemy TODO make better ones.
 public class SimpleEnemy extends Enemy implements Interactable {
 
     public SimpleEnemy(Pane pane) {

@@ -21,7 +21,6 @@ public class Globals {
     public static Image facebook = new Image("facebook.png");
     public static Image spotify = new Image("spotify.png");
     public static Image powerupBerry = new Image("powerup_berry.png");
-    //.. put here the other images you want to use
 
     public static boolean leftKeyDown;
     public static boolean rightKeyDown;
