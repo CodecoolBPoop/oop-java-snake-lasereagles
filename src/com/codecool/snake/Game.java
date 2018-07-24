@@ -40,4 +40,13 @@ public class Game extends Pane {
         Globals.gameLoop = new GameLoop();
         Globals.gameLoop.start();
     }
+
+//    public newGame() {
+//        System.exit(0);
+//    }
+
+//    public exitGame() {
+//        System.exit(0);
+//    }
+
 }
