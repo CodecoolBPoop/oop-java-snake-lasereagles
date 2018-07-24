@@ -2,13 +2,14 @@ package com.codecool.snake.entities.enemies;
 
 import com.codecool.snake.Globals;
 import com.codecool.snake.Utils;
+import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.RandomNumber;
 
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 
-public class Enemy extends GameEntity{
+public class Enemy extends GameEntity implements Animatable {
 
     protected Point2D heading;
     int damage;
@@ -28,6 +29,15 @@ public class Enemy extends GameEntity{
         this.direction = RandomNumber.getRandomDouble() * 360;
         this.setRotate(this.direction);
         this.heading = Utils.directionToVector(this.direction, this.speed);  //what is the difference between line 31 and 32?
+    }
+
+    @Override
+    public void step(){
+        if(isOutOfBounds()){
+            this.setDirection();
+        }
+        this.setX(getX() + this.heading.getX());
+        this.setY(getY() + this.heading.getY());
     }
 
 }
