@@ -15,22 +15,6 @@ public class Game extends Pane {
         new SnakeHead(this, 500, 500);
         makeEnemy();
         makePowerUp();
-
-        /*
-        new SimpleEnemy(this);  //why not a for/while loop?
-        new SimpleEnemy(this);
-        new SimpleEnemy(this);
-        new SimpleEnemy(this);
-
-        new LinkedIn(this);
-        new Facebook(this);
-        new Spotify(this);
-
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        */
     }
     
     public void makeEnemy(){
