@@ -5,7 +5,7 @@ import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
-public class Spotify extends Enemy implements Interactable {
+public class Spotify extends Enemy  {
 
 
     public Spotify(Pane pane) {
@@ -17,14 +17,4 @@ public class Spotify extends Enemy implements Interactable {
         this.setPosition();
         this.setDirection();
     }
-
-    @Override
-    public void apply(SnakeHead player) {
-        player.changeHealth(-this.getDamage());
-        destroy();
-    }
-
-    @Override
-    public String getMessage(){return "25 damage"; }
-
 }
