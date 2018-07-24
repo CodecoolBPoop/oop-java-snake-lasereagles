@@ -44,6 +44,4 @@ public class Globals {
     public static List<GameEntity> getGameObjects() {
         return Collections.unmodifiableList(gameObjects);
     }
-    //why we need this getter?
-    //nem értjük
 }

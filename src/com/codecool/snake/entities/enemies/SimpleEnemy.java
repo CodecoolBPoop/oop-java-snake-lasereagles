@@ -13,7 +13,7 @@ import java.util.Random;
 
 // a simple enemy TODO make better ones.
 public class SimpleEnemy extends GameEntity implements Animatable, Interactable {
-
+    private Random rnd = new Random();
     private Point2D heading;
     private static final int damage = 10;
 
@@ -23,17 +23,26 @@ public class SimpleEnemy extends GameEntity implements Animatable, Interactable 
         setImage(Globals.simpleEnemy);
         pane.getChildren().add(this);
         int speed = 1;
-        Random rnd = new Random();
-        setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
-        setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
 
+        setSpawnPos();
         double direction = rnd.nextDouble() * 360;
         setRotate(direction);
         heading = Utils.directionToVector(direction, speed);  //what is the difference between line 31 and 32?
     }
 
+    public void setSpawnPos() {
+        //double ProtectedX = Utils.getSnakePos(pane);
+
+
+       // getAvailableSpawnQuadrant();
+
+        setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
+        setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
+    }
+
     @Override
     public void step() {
+
         if (isOutOfBounds()) {
             destroy();
         }

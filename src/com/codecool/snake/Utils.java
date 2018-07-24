@@ -1,6 +1,8 @@
 package com.codecool.snake;
 
+import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Point2D;
+import javafx.scene.layout.Pane;
 
 public class Utils {
 
@@ -13,4 +15,16 @@ public class Utils {
         Point2D heading = new Point2D(length * Math.sin(directionInRadians), - length * Math.cos(directionInRadians));
         return heading;
     }
+
+
+    public static Position getSnakePos(Pane pane) {
+        int index = pane.getChildren().indexOf(SnakeHead.snakeHead);
+        SnakeHead snake = (SnakeHead) pane.getChildren().get(index);
+        return new Position(snake.getX(), snake.getY());
+    }
+
+    public int getFreeQuadrant() {
+        return 1;
+    }
+
 }
