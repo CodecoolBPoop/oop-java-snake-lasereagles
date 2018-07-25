@@ -14,6 +14,11 @@ import java.util.Queue;
 public class SnakeBody extends GameEntity implements Animatable {
 
     private GameEntity parent;
+
+    public Queue<Vec2d> getHistory() {
+        return history;
+    }
+
     private Queue<Vec2d> history = new LinkedList<>();
     private static final int historySize = 10; // is this the max length?
 
