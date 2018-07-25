@@ -7,8 +7,11 @@ import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.enemies.SimpleEnemy;
 import javafx.geometry.Point2D;
+import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +23,19 @@ public class SnakeHead extends GameEntity implements Animatable {
     private GameEntity tail; // the last element. Needed to know where to add the next part.
     public static GameEntity snakeHead;
     private int health;
+    public static Label label = new Label("100");
     public static ProgressBar p2 = new ProgressBar();
 
     public static ProgressBar createBar() {
         p2.setProgress(0.6);
         return p2;
+    }
+
+    public static Label create() {
+        label.setText("100");
+        label.setFont(Font.font ("Verdana", FontWeight.EXTRA_BOLD, 20));
+        label.setLayoutX(0.5 * Globals.WINDOW_WIDTH);
+        return label;
     }
 
     public SnakeHead(Pane pane, int xc, int yc) {
@@ -82,7 +93,8 @@ public class SnakeHead extends GameEntity implements Animatable {
 
     public void changeHealth(int diff) {
 
-        p2.setProgress(0.5);
+        //p2.setProgress(0.5);
+        label.setText(String.valueOf(diff));
         health += diff;
     }
 
