@@ -33,7 +33,7 @@ public class SpeedUp extends GameEntity implements Interactable{
     }
 
     public GameEntity createInstance() {
-        return null;
+        return new SpeedUp(pane);
     }
 
 }
