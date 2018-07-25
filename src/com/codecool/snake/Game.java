@@ -9,17 +9,25 @@ import javafx.scene.layout.Pane;
 public class Game extends Pane {
 
     public Game() {
+        snake();
+        setEnemy();
+        setPowerUp();
+    }
+
+    public void snake() {
         new SnakeHead(this, 500, 500);
+    }
 
-        new SimpleEnemy(this);  //why not a for/while loop?
-        new SimpleEnemy(this);
-        new SimpleEnemy(this);
-        new SimpleEnemy(this);
+    public void setEnemy(){
+        for (int i = 0; i < 3; i++) {
+            new SimpleEnemy(this);
+        }
+    }
 
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        new SimplePowerup(this);
+    public void setPowerUp(){
+        for (int i = 0; i < 4; i++) {
+            new SimplePowerup(this);
+        }
     }
 
     public void start() {

@@ -1,5 +1,8 @@
 package com.codecool.snake;
 
+import com.codecool.snake.entities.enemies.SimpleEnemy;
+import com.codecool.snake.entities.powerups.SimplePowerup;
+import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -28,9 +31,16 @@ public class MenuFactory {
 
         // When user click on the Single Player item.
         singlePlayer.setOnAction(__ -> {
-            primaryStage.close();
-            StageSetter.setStage(game, primaryStage);
+            Globals.gameLoop.stop();
+            Globals.gameObjects.clear();
+            Globals.oldGameObjects.clear();
+            Globals.newGameObjects.clear();
+            game.getChildren().clear();
+            System.out.println("lefut");
             game.start();
+            game.setEnemy();
+            game.snake();
+            game.setPowerUp();
         });
 
         // When user click on the Multi Player item.
