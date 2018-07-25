@@ -1,10 +1,7 @@
 package com.codecool.snake;
 
-import com.codecool.snake.entities.enemies.Facebook;
-import com.codecool.snake.entities.enemies.LinkedIn;
-import com.codecool.snake.entities.enemies.SimpleEnemy;
-import com.codecool.snake.entities.powerups.HealthRestore;
-import com.codecool.snake.entities.enemies.Spotify;
+import com.codecool.snake.entities.enemies.*;
+
 import com.codecool.snake.entities.powerups.SimplePowerup;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.Scene;
@@ -32,7 +29,10 @@ public class Game extends Pane {
         for (int i = 0; i < 4; i++) {
             new SimplePowerup(this);
         }
+    }
 
+    public void oneNewPowerUp(){
+        new SimplePowerup(this);
     }
 
     public void start() {

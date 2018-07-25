@@ -3,6 +3,8 @@ package com.codecool.snake.entities.powerups;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Interactable;
+import com.codecool.snake.entities.enemies.Enemy;
+import com.codecool.snake.entities.enemies.SimpleEnemy;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
@@ -30,5 +32,9 @@ public class SimplePowerup extends GameEntity implements Interactable {
     @Override
     public String getMessage() {
         return "Got power-up :)";
+    }
+
+    public GameEntity createInstance(){
+        return new SimplePowerup(pane);
     }
 }

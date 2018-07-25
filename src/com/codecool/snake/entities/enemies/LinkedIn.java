@@ -1,6 +1,7 @@
 package com.codecool.snake.entities.enemies;
 
 import com.codecool.snake.Globals;
+import com.codecool.snake.entities.GameEntity;
 import javafx.scene.layout.Pane;
 
 public class LinkedIn extends Enemy {
@@ -13,5 +14,9 @@ public class LinkedIn extends Enemy {
         this.setSpeed(3);
         this.setSpawnPos();
         this.setDirection();
+    }
+
+    public GameEntity createInstance(){
+        return new LinkedIn(pane);
     }
 }
