@@ -1,5 +1,6 @@
 package com.codecool.snake.entities.enemies;
 
+import com.codecool.snake.Position;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Animatable;
@@ -31,13 +32,10 @@ public class SimpleEnemy extends GameEntity implements Animatable, Interactable 
     }
 
     public void setSpawnPos() {
-        //double ProtectedX = Position.getSnakePos(pane);
-
-        //in utils?: in a while loop:
-        //gen coords, check snakehead coords, compare ratio, if bigger allow spanw, if not gen new spawn coord
-
-        setX(rnd.nextDouble() * Globals.WINDOW_WIDTH);
-        setY(rnd.nextDouble() * Globals.WINDOW_HEIGHT);
+        Position snakePos = Position.getSnakePos(pane);
+        snakePos = Position.getAvailablePos(snakePos);
+        setX(snakePos.x);
+        setY(snakePos.y);
     }
 
     @Override
