@@ -5,14 +5,19 @@ import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Interactable;
+import com.codecool.snake.entities.enemies.SimpleEnemy;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SnakeHead extends GameEntity implements Animatable {
 
     private static final float speed = 2;
     private static final float turnRate = 2;
     private GameEntity tail; // the last element. Needed to know where to add the next part.
+    public static GameEntity snakeHead;
     private int health;
 
     public SnakeHead(Pane pane, int xc, int yc) {
@@ -21,10 +26,23 @@ public class SnakeHead extends GameEntity implements Animatable {
         setY(yc);
         health = 100;
         tail = this;
+        snakeHead = this;
         setImage(Globals.snakeHead);
         pane.getChildren().add(this);
 
         addPart(4);
+    }
+
+    public GameEntity getSnakeHead() {
+        return snakeHead;
+    }
+
+    public double getPosX() {
+        return this.getX();
+    }
+
+    public double getPosY() {
+        return this.getY();
     }
 
     public void step() {
@@ -43,6 +61,7 @@ public class SnakeHead extends GameEntity implements Animatable {
 
         // check if collided with an enemy or a powerup
         // ez jó helyen lakik-e ez a collide?
+
         for (GameEntity entity : Globals.getGameObjects()) {
             if (getBoundsInParent().intersects(entity.getBoundsInParent())) {
                 if (entity instanceof Interactable) {

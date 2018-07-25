@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 public class Game extends Pane {
 
     public Game() {
+
         new SnakeHead(this, 500, 500);
         setEnemy();
         setPowerUp();
@@ -30,6 +31,7 @@ public class Game extends Pane {
         for (int i = 0; i < 4; i++) {
             new SimplePowerup(this);
         }
+
     }
 
     public void start() {
