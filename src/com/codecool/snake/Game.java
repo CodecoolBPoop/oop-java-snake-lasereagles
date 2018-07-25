@@ -1,6 +1,9 @@
 package com.codecool.snake;
 
+import com.codecool.snake.entities.enemies.Facebook;
+import com.codecool.snake.entities.enemies.LinkedIn;
 import com.codecool.snake.entities.enemies.SimpleEnemy;
+import com.codecool.snake.entities.enemies.Spotify;
 import com.codecool.snake.entities.powerups.SimplePowerup;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.Scene;
@@ -9,17 +12,25 @@ import javafx.scene.layout.Pane;
 public class Game extends Pane {
 
     public Game() {
-        new SnakeHead(this, 500, 250);
 
-        new SimpleEnemy(this);  //why not a for/while loop?
-        new SimpleEnemy(this);
-        new SimpleEnemy(this);
-        new SimpleEnemy(this);
+        new SnakeHead(this, 500, 500);
+        setEnemy();
+        setPowerUp();
+    }
+    
+    public void setEnemy(){
+        for (int i = 0; i < 3; i++) {
+            new LinkedIn(this);
+            new Facebook(this);
+            new Spotify(this);
+            new SimpleEnemy(this);
+        }
+    }
 
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        new SimplePowerup(this);
-        new SimplePowerup(this);
+    public void setPowerUp(){
+        for (int i = 0; i < 4; i++) {
+            new SimplePowerup(this);
+        }
 
     }
 
