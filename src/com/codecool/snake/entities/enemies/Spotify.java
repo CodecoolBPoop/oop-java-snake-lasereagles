@@ -5,15 +5,14 @@ import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
+public class Spotify extends Enemy  {
 
-public class SimpleEnemy extends Enemy {
-
-    public SimpleEnemy(Pane pane) {
+    public Spotify(Pane pane) {
         super(pane);
-        this.setDamage(10);
-        setImage(Globals.simpleEnemy);
+        this.setDamage(25);
+        setImage(Globals.spotify);
         pane.getChildren().add(this);
-        this.setSpeed(1);
+        this.setSpeed(2);
         this.setPosition();
         this.setDirection();
     }
