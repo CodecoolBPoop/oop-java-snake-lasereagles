@@ -37,9 +37,11 @@ public class MenuFactory {
             Globals.newGameObjects.clear();
             game.getChildren().clear();
             System.out.println("lefut");
+            primaryStage.close(); //these two lines causes a blink!
+            StageSetter.setStage(game, primaryStage); //this causes a blink!
             game.start();
-            game.setEnemy();
             game.snake();
+            game.setEnemy();
             game.setPowerUp();
         });
 

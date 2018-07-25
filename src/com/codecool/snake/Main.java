@@ -23,10 +23,10 @@ public class Main extends Application {
         StageSetter.setStage(game, primaryStage);
 
 
-        game.getChildren().add(SnakeHead.create());
-        primaryStage.setTitle("Snake Game");
+        //game.getChildren().add(SnakeHead.create());
+/*        primaryStage.setTitle("Snake Game");
         primaryStage.setScene(new Scene(game, Globals.WINDOW_WIDTH, Globals.WINDOW_HEIGHT));
-        primaryStage.show();
+        primaryStage.show();*/
 
         game.start();
     }

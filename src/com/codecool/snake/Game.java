@@ -16,8 +16,6 @@ public class Game extends Pane {
     }
 
     public void snake() {
-        new SnakeHead(this, 500, 500);
-
 
         new SnakeHead(this, 500, 500);
         setEnemy();
@@ -50,6 +48,7 @@ public class Game extends Pane {
 
     public void start() {
         Scene scene = getScene();
+
         scene.setOnKeyPressed(event -> {
             switch (event.getCode()) {
                 case LEFT:
