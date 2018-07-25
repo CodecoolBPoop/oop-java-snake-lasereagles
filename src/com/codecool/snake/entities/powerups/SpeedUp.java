@@ -3,19 +3,17 @@ package com.codecool.snake.entities.powerups;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Interactable;
-import com.codecool.snake.entities.enemies.Enemy;
-import com.codecool.snake.entities.enemies.SimpleEnemy;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
 import java.util.Random;
 
-// a simple powerup that makes the snake grow TODO make other powerups
-public class SimplePowerup extends GameEntity implements Interactable {
+public class SpeedUp extends GameEntity implements Interactable{
 
-    public SimplePowerup(Pane pane) {
+
+    public SpeedUp(Pane pane){
         super(pane);
-        setImage(Globals.powerupBerry);
+        setImage(Globals.coffe);
         pane.getChildren().add(this);
 
         Random rnd = new Random();
@@ -24,17 +22,18 @@ public class SimplePowerup extends GameEntity implements Interactable {
     }
 
     @Override
-    public void apply(SnakeHead snakeHead) {
-        snakeHead.addPart(4);
+    public void apply(SnakeHead snakeHead){
+        snakeHead.changeSpeed(1);
         destroy();
     }
 
     @Override
-    public String getMessage() {
-        return "Got power-up :)";
+    public String getMessage(){
+        return "got speed up";
     }
 
-    public GameEntity createInstance(){
-        return new SimplePowerup(pane);
+    public GameEntity createInstance() {
+        return null;
     }
+
 }

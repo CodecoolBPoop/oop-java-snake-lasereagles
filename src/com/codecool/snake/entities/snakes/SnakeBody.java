@@ -3,6 +3,7 @@ package com.codecool.snake.entities.snakes;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Animatable;
+import com.codecool.snake.entities.enemies.Enemy;
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
@@ -14,6 +15,11 @@ import java.util.Queue;
 public class SnakeBody extends GameEntity implements Animatable {
 
     private GameEntity parent;
+
+    public Queue<Vec2d> getHistory() {
+        return history;
+    }
+
     private Queue<Vec2d> history = new LinkedList<>();
     private static final int historySize = 10; // is this the max length?
 
@@ -40,6 +46,10 @@ public class SnakeBody extends GameEntity implements Animatable {
         setX(pos.x);
         setY(pos.y);
         history.add(new Vec2d(parent.getX(), parent.getY())); // add the parent's current position to the beginning of the history
+    }
+
+    public GameEntity createInstance(){
+        return null;
     }
 
 }
