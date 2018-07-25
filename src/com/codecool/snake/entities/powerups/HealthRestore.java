@@ -14,7 +14,7 @@ public class HealthRestore extends GameEntity implements Interactable {
 
     public HealthRestore(Pane pane){
         super(pane);
-        setImage(Globals.coffe);
+        setImage(Globals.chili);
         pane.getChildren().add(this);
 
         Random rnd = new Random();
@@ -30,7 +30,7 @@ public class HealthRestore extends GameEntity implements Interactable {
 
     @Override
     public String getMessage(){
-        return "";
+        return "health restored with 10";
     }
 
 }
