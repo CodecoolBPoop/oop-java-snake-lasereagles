@@ -8,7 +8,11 @@ import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.enemies.Enemy;
 import com.codecool.snake.entities.enemies.SimpleEnemy;
 import javafx.geometry.Point2D;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +24,20 @@ public class SnakeHead extends GameEntity implements Animatable {
     private GameEntity tail; // the last element. Needed to know where to add the next part.
     public static GameEntity snakeHead;
     private int health;
+    public static Label label = new Label("100");
+    public static ProgressBar p2 = new ProgressBar();
+
+    public static ProgressBar createBar() {
+        p2.setProgress(0.6);
+        return p2;
+    }
+
+    public static Label create() {
+        label.setText("100");
+        label.setFont(Font.font ("Verdana", FontWeight.EXTRA_BOLD, 20));
+        label.setLayoutX(0.5 * Globals.WINDOW_WIDTH);
+        return label;
+    }
 
     public SnakeHead(Pane pane, int xc, int yc) {
         super(pane);
@@ -30,20 +48,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         snakeHead = this;
         setImage(Globals.snakeHead);
         pane.getChildren().add(this);
-
         addPart(4);
-    }
-
-    public GameEntity getSnakeHead() {
-        return snakeHead;
-    }
-
-    public double getPosX() {
-        return this.getX();
-    }
-
-    public double getPosY() {
-        return this.getY();
     }
 
     public void step() {
@@ -90,6 +95,12 @@ public class SnakeHead extends GameEntity implements Animatable {
 
     public void changeHealth(int diff) {
         health += diff;
+        System.out.println(diff);
+        if (health <= 0) {
+            label.setText("0");
+        }else{
+            label.setText(String.valueOf(health));
+        }
     }
 
     public GameEntity createInstance() {
