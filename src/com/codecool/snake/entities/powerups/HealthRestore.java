@@ -33,5 +33,9 @@ public class HealthRestore extends GameEntity implements Interactable {
         return "health restored with 10";
     }
 
+    public GameEntity createInstance() {
+        return null;
+    }
+
 }
 
