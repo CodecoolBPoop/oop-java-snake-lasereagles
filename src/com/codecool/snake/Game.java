@@ -3,6 +3,7 @@ package com.codecool.snake;
 import com.codecool.snake.entities.enemies.Facebook;
 import com.codecool.snake.entities.enemies.LinkedIn;
 import com.codecool.snake.entities.enemies.SimpleEnemy;
+import com.codecool.snake.entities.powerups.HealthRestore;
 import com.codecool.snake.entities.enemies.Spotify;
 import com.codecool.snake.entities.powerups.SimplePowerup;
 import com.codecool.snake.entities.snakes.SnakeHead;
@@ -17,7 +18,7 @@ public class Game extends Pane {
         setEnemy();
         setPowerUp();
     }
-    
+
     public void setEnemy(){
         for (int i = 0; i < 3; i++) {
             new LinkedIn(this);
