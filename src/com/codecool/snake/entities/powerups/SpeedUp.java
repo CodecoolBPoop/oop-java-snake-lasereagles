@@ -32,4 +32,8 @@ public class SpeedUp extends GameEntity implements Interactable{
         return "got speed up";
     }
 
+    public GameEntity createInstance() {
+        return null;
+    }
+
 }
