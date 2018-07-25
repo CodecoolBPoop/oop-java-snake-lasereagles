@@ -20,6 +20,14 @@ public class SnakeHead extends GameEntity implements Animatable {
     public static GameEntity snakeHead;
     private int health;
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public SnakeHead(Pane pane, int xc, int yc) {
         super(pane);
         setX(xc);
@@ -29,20 +37,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         snakeHead = this;
         setImage(Globals.snakeHead);
         pane.getChildren().add(this);
-
         addPart(4);
-    }
-
-    public GameEntity getSnakeHead() {
-        return snakeHead;
-    }
-
-    public double getPosX() {
-        return this.getX();
-    }
-
-    public double getPosY() {
-        return this.getY();
     }
 
     public void step() {
@@ -87,6 +82,7 @@ public class SnakeHead extends GameEntity implements Animatable {
     }
 
     public void changeHealth(int diff) {
+        p2.setProgress(0.25F);
         health += diff;
     }
 
