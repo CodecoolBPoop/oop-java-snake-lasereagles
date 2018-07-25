@@ -1,6 +1,7 @@
 package com.codecool.snake.entities.enemies;
 
 import com.codecool.snake.Globals;
+import com.codecool.snake.entities.GameEntity;
 import javafx.scene.layout.Pane;
 
 public class Facebook extends Enemy {
@@ -14,4 +15,9 @@ public class Facebook extends Enemy {
         this.setSpawnPos();
         this.setDirection();
     }
+
+    public GameEntity createInstance(){
+        return new Facebook(pane);
+    }
+
 }
