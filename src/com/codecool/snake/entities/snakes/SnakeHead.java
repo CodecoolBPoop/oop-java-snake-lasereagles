@@ -93,10 +93,11 @@ public class SnakeHead extends GameEntity implements Animatable {
 
     public void changeHealth(int diff) {
         health += diff;
+        System.out.println(diff);
         if (health <= 0) {
             label.setText("0");
         }else{
-            label.setText(String.valueOf(health += diff));
+            label.setText(String.valueOf(health));
         }
     }
 
