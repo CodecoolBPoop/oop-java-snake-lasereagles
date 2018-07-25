@@ -7,6 +7,7 @@ import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Interactable;
 import com.codecool.snake.entities.enemies.SimpleEnemy;
 import javafx.geometry.Point2D;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
@@ -19,13 +20,11 @@ public class SnakeHead extends GameEntity implements Animatable {
     private GameEntity tail; // the last element. Needed to know where to add the next part.
     public static GameEntity snakeHead;
     private int health;
+    public static ProgressBar p2 = new ProgressBar();
 
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
+    public static ProgressBar createBar() {
+        p2.setProgress(0.6);
+        return p2;
     }
 
     public SnakeHead(Pane pane, int xc, int yc) {
@@ -82,7 +81,8 @@ public class SnakeHead extends GameEntity implements Animatable {
     }
 
     public void changeHealth(int diff) {
-        p2.setProgress(0.25F);
+
+        p2.setProgress(0.5);
         health += diff;
     }
 
