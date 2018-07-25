@@ -6,6 +6,7 @@ import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.entities.enemies.Enemy;
 import com.sun.javafx.geom.Vec2d;
 import javafx.scene.Node;
+import javafx.scene.effect.MotionBlur;
 import javafx.scene.layout.Pane;
 
 import java.util.LinkedList;
@@ -39,6 +40,10 @@ public class SnakeBody extends GameEntity implements Animatable {
         for (int i = 0; i < historySize; i++) {
             history.add(new Vec2d(xc, yc));
         }
+        MotionBlur motionBlur2 = new MotionBlur();
+        motionBlur2.setRadius(10);
+        motionBlur2.setAngle(getRotate());
+        this.setEffect(motionBlur2);
     }
 
     public void step() {
