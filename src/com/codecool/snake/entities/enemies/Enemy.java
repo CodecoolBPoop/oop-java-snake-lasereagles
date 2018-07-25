@@ -1,5 +1,7 @@
 package com.codecool.snake.entities.enemies;
 
+import com.codecool.snake.Position;
+import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Animatable;
@@ -20,11 +22,6 @@ public class Enemy extends GameEntity implements Animatable, Interactable {
 
     public Enemy(Pane pane) {
         super(pane);
-    }
-
-    protected void setPosition(){
-        setX(RandomNumber.getRandomDouble() * Globals.WINDOW_WIDTH);
-        setY(RandomNumber.getRandomDouble() * Globals.WINDOW_HEIGHT);
     }
 
     protected void setDirection(){
@@ -63,4 +60,10 @@ public class Enemy extends GameEntity implements Animatable, Interactable {
     @Override
     public String getMessage(){return this.getDamage() + " damage" ; }
 
+    public void setSpawnPos() {
+        Position snakePos = Position.getSnakePos(pane);
+        snakePos = Position.getAvailablePos(snakePos);
+        setX(snakePos.x);
+        setY(snakePos.y);
+    }
 }
