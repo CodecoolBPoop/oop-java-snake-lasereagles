@@ -1,6 +1,7 @@
 package com.codecool.snake;
 
 import com.codecool.snake.entities.enemies.*;
+
 import com.codecool.snake.entities.powerups.SimplePowerup;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.Scene;
@@ -14,7 +15,7 @@ public class Game extends Pane {
         setEnemy();
         setPowerUp();
     }
-    
+
     public void setEnemy(){
         for (int i = 0; i < 3; i++) {
             new LinkedIn(this);
