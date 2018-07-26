@@ -1,6 +1,5 @@
 package com.codecool.snake.entities.powerups;
 
-
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Interactable;
@@ -11,11 +10,11 @@ import javafx.scene.layout.Pane;
 import java.util.Random;
 
 
-public class HealthRestore extends GameEntity implements Interactable {
+public class FirewallHealthRestore extends GameEntity implements Interactable {
 
-    public HealthRestore(Pane pane){
+    public FirewallHealthRestore(Pane pane){
         super(pane);
-        setImage(Globals.chili);
+        setImage(Globals.firewall);
         pane.getChildren().add(this);
 
         Random rnd = new Random();
@@ -40,7 +39,7 @@ public class HealthRestore extends GameEntity implements Interactable {
     }
 
     public GameEntity createInstance() {
-        return null;
+        return new FirewallHealthRestore(pane);
     }
 
 }

@@ -1,8 +1,5 @@
 package com.codecool.snake;
 
-import com.codecool.snake.entities.enemies.SimpleEnemy;
-import com.codecool.snake.entities.powerups.SimplePowerup;
-import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -40,7 +37,7 @@ public class MenuFactory {
             primaryStage.close(); //these two lines causes a blink!
             StageSetter.setStage(game, primaryStage); //this causes a blink!
             game.start();
-            game.snake();
+            game.snake1player();
             game.setEnemy();
             game.setPowerUp();
         });

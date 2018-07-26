@@ -10,7 +10,6 @@ import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 
-import static com.codecool.snake.Globals.addGameObject;
 
 public abstract class Enemy extends GameEntity implements Animatable, Interactable {
 
@@ -26,7 +25,7 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
     protected void setDirection(){
         this.direction = RandomNumber.getRandomDouble() * 360;
         this.setRotate(this.direction);
-        this.heading = Utils.directionToVector(this.direction, this.speed);  //what is the difference between line 31 and 32?
+        this.heading = Utils.directionToVector(this.direction, this.speed);
     }
 
     public void setDamage(int damage) {

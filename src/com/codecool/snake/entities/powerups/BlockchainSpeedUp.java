@@ -9,12 +9,12 @@ import javafx.scene.layout.Pane;
 
 import java.util.Random;
 
-public class SpeedUp extends GameEntity implements Interactable{
+public class BlockchainSpeedUp extends GameEntity implements Interactable{
 
 
-    public SpeedUp(Pane pane){
+    public BlockchainSpeedUp(Pane pane){
         super(pane);
-        setImage(Globals.coffe);
+        setImage(Globals.blockchain);
         pane.getChildren().add(this);
 
         Random rnd = new Random();
@@ -40,7 +40,7 @@ public class SpeedUp extends GameEntity implements Interactable{
     }
 
     public GameEntity createInstance() {
-        return null;
+        return new BlockchainSpeedUp(pane);
     }
 
 }
