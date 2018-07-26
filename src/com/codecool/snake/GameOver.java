@@ -22,41 +22,23 @@ public class GameOver {
         window.setTitle(title);
         window.setMinWidth(400);
 
-        Button buttonSinglePlayer = new Button("1 player");
-        buttonSinglePlayer.setPrefSize(100, 20);
-        buttonSinglePlayer.setOnAction(__ ->
+        Button buttonClose = new Button("Close");
+        buttonClose.setPrefSize(100, 20);
+        buttonClose.setOnAction(__ ->
         {
-            Globals.gameLoop.stop();
-            Globals.gameObjects.clear();
-            Globals.oldGameObjects.clear();
-            Globals.newGameObjects.clear();
-            game.getChildren().clear();
-            System.out.println("lefut");
-            game.start();
-            game.snake();
-            game.setEnemy();
-            game.setPowerUp();
-            game.getChildren().add(SnakeHead.create());
-            game.getChildren().add(game.addVBox(game));
-            System.out.println("Started a single player game.");
+            window.close();
         });
-
-        Button buttonMultiPlayer = new Button("2 players");
-        buttonSinglePlayer.setPrefSize(100, 20);
 
         Label label = new Label();
         String StrHighScore = Integer.toString(highscore);
         label.setText("Your score is " + StrHighScore);
 
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(label, buttonSinglePlayer, buttonMultiPlayer);
+        layout.getChildren().addAll(label, buttonClose);
         layout.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(layout);
         window.setScene(scene);
         window.show();
-
-
-
     }
 }
