@@ -10,6 +10,7 @@ import com.codecool.snake.entities.Interactable;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.effect.MotionBlur;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -21,14 +22,11 @@ public class SnakeHead extends GameEntity implements Animatable {
     private static final float turnRate = 2;
     private GameEntity tail; // the last element. Needed to know where to add the next part.
     public static GameEntity snakeHead;
+    public static int instance = 0;
     private int health;
     public static Label label = new Label("100");
-    public static ProgressBar p2 = new ProgressBar();
-
-    public static ProgressBar createBar() {
-        p2.setProgress(0.6);
-        return p2;
-    }
+    public static Label label2 = new Label("100");
+    private String name = "snake";
 
     public static Label create() {
         label.setText("100");
@@ -36,6 +34,14 @@ public class SnakeHead extends GameEntity implements Animatable {
         label.setLayoutX(0.5 * Globals.WINDOW_WIDTH);
         return label;
     }
+
+    public static Label createHealthPlayer2() {
+        label2.setText("100");
+        label2.setFont(Font.font ("Verdana", FontWeight.EXTRA_BOLD, 20));
+        label2.setLayoutX(0.1 * Globals.WINDOW_WIDTH);
+        return label2;
+    }
+
 
     public SnakeHead(Pane pane, int xc, int yc) {
         super(pane);
@@ -47,16 +53,37 @@ public class SnakeHead extends GameEntity implements Animatable {
         setImage(Globals.snakeHead);
         pane.getChildren().add(this);
         addPart(4);
+        this.name = name+instance;
+        System.out.println(this.name);
+        instance++;
+        System.out.println("startinstance"+instance);
     }
+
 
     public void step() {
         double dir = getRotate();
-        if (Globals.leftKeyDown) {
-            dir = dir - turnRate;
+
+        if (name.equals("snake0")) {
+            if (Globals.leftKeyDown) {
+                System.out.println("left");
+                dir = dir - turnRate;
+            }
+            if (Globals.rightKeyDown) {
+                dir = dir + turnRate;
+            }
         }
-        if (Globals.rightKeyDown) {
-            dir = dir + turnRate;
+
+        if (name.equals("snake1")) {
+            if (Globals.aKeyDown) {
+                System.out.println("a");
+                dir = dir - turnRate;
+            }
+            if (Globals.dKeyDown) {
+                System.out.println("d");
+                dir = dir + turnRate;
+            }
         }
+
         // set rotation and position
         setRotate(dir);
         Point2D heading = Utils.directionToVector(dir, speed);
@@ -79,11 +106,20 @@ public class SnakeHead extends GameEntity implements Animatable {
 
         // check for game over condition
         if (isOutOfBounds() || health <= 0) {
-            System.out.println("Game Over");
-            Globals.gameLoop.stop();
-            GameOver.gameover("Game over");
+            if (this.name.equals("snake1")) {
+                System.out.println(name+"Game Over");
 
-
+            }
+            if (this.name.equals("snake2")) {
+                System.out.println(name+"Game Over");
+            }
+            instance--;
+            destroy();
+            System.out.println("deathinstance" + instance);
+            if (instance==0) {
+                Globals.gameLoop.stop();
+                GameOver.gameover("Game over");
+            }
         }
     }
 
