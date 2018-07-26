@@ -9,7 +9,6 @@ import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 
-import static com.codecool.snake.Globals.addGameObject;
 
 public abstract class Enemy extends GameEntity implements Animatable, Interactable {
 
