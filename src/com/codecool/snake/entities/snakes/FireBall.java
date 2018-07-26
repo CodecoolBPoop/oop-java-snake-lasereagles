@@ -6,14 +6,11 @@ import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.entities.Interactable;
-import com.sun.javafx.geom.Vec2d;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 
 public class FireBall extends GameEntity implements Animatable {
 
-    // Position.getSnakePos.
-    //public static int historySize = 5;
     protected Point2D heading;
     private double direction;
     private int speed;
@@ -27,9 +24,7 @@ public class FireBall extends GameEntity implements Animatable {
         setPosition();
     }
 
-
-
-    protected void setDirection(){ // TODO this is not working yet
+    protected void setDirection(){
         this.direction = SnakeHead.getSnaceDirection();
         this.setRotate(this.direction);
         this.heading = Utils.directionToVector(this.direction, this.speed);  //what is the difference between line 31 and 32?
@@ -51,12 +46,7 @@ public class FireBall extends GameEntity implements Animatable {
         }
         this.setX(getX() + this.heading.getX());
         this.setY(getY() + this.heading.getY());
-    /*
 
-        for (int i = 0; i < historySize; i++) {
-            history.add(new Vec2d(xc, yc));
-        }
-     */
 
         for (GameEntity entity: Globals.getGameObjects()) {
             if (getBoundsInParent().intersects(entity.getBoundsInParent())) {
@@ -69,7 +59,6 @@ public class FireBall extends GameEntity implements Animatable {
                 }
             }
         }
-
     }
 
     @Override

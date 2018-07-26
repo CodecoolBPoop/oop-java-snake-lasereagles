@@ -20,11 +20,10 @@ public class Game extends Pane {
         new SnakeHead(this, 500, 500);
         setEnemy();
         setPowerUp();
-
     }
 
     public void setEnemy(){
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
 
             new LinkedIn(this);
             new Facebook(this);
