@@ -17,7 +17,7 @@ public class Globals {
     public static Image snakeBody = new Image("snake_body.png");
     public static Image linkedIn = new Image("linkedin.png"); // Itt a kép nem felel meg
     public static Image facebook = new Image("facebook.png");
-    public static Image fire = new Image("snake_body.png");
+    public static Image fire = new Image("fireball.png");
     public static Image amazon = new Image("amazon.png");
     public static Image gdpr = new Image("gdpr.png");
     public static Image blockchain = new Image("blockchain.png");
