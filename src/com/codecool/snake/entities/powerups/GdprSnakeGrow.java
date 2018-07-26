@@ -10,9 +10,9 @@ import javafx.scene.layout.Pane;
 import java.util.Random;
 
 // a simple powerup that makes the snake grow TODO make other powerups
-public class GDPR extends GameEntity implements Interactable {
+public class GdprSnakeGrow extends GameEntity implements Interactable {
 
-    public GDPR(Pane pane) {
+    public GdprSnakeGrow(Pane pane) {
         super(pane);
         setImage(Globals.gdpr);
         pane.getChildren().add(this);
@@ -35,6 +35,6 @@ public class GDPR extends GameEntity implements Interactable {
     }
 
     public GameEntity createInstance(){
-        return new GDPR(pane);
+        return new GdprSnakeGrow(pane);
     }
 }
