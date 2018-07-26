@@ -37,7 +37,7 @@ public class MenuFactory {
             primaryStage.close(); //these two lines causes a blink!
             StageSetter.setStage(game, primaryStage); //this causes a blink!
             game.start();
-            game.snake();
+            game.snake1player();
             game.setEnemy();
             game.setPowerUp();
         });

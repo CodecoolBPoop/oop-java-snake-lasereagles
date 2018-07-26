@@ -14,14 +14,20 @@ import javafx.scene.layout.*;
 public class Game extends Pane {
 
     public Game() {
-        snake();
+        snake1player();
         setEnemy();
         setPowerUp();
     }
 
-    public void snake() {
+    public void snake1player() {
         new SnakeHead(this, 500, 500);
     }
+
+    public void snake2player() {
+        new SnakeHead(this, 500, 500);
+        new SnakeHead(this, 500, 400);
+    }
+
 
     public void setEnemy(){
         for (int i = 0; i < 3; i++) {
@@ -51,6 +57,12 @@ public class Game extends Pane {
                 case RIGHT:
                     Globals.rightKeyDown = true;
                     break;
+                case A:
+                    Globals.aKeyDown  = true;
+                    break;
+                case D:
+                    Globals.dKeyDown  = true;
+                    break;
             }
         });
 
@@ -61,6 +73,12 @@ public class Game extends Pane {
                     break;
                 case RIGHT:
                     Globals.rightKeyDown = false;
+                    break;
+                case A:
+                    Globals.aKeyDown  = true;
+                    break;
+                case D:
+                    Globals.dKeyDown  = true;
                     break;
             }
         });
@@ -89,10 +107,12 @@ public class Game extends Pane {
             Globals.gameObjects.clear();
             Globals.oldGameObjects.clear();
             Globals.newGameObjects.clear();
+
+            SnakeHead.instance = 0;
             game.getChildren().clear();
-            System.out.println("lefut");
+            //System.out.println("lefut");
             game.start();
-            game.snake();
+            game.snake1player();
             game.setEnemy();
             game.setPowerUp();
             game.getChildren().add(SnakeHead.create());
@@ -104,6 +124,20 @@ public class Game extends Pane {
         buttonMultiPlayer.setPrefSize(100, 20);
         buttonMultiPlayer.setOnAction(__ ->
         {
+            Globals.gameLoop.stop();
+            Globals.gameObjects.clear();
+            Globals.oldGameObjects.clear();
+            Globals.newGameObjects.clear();
+
+
+            SnakeHead.instance = 0;
+            game.getChildren().clear();
+            game.start();
+            game.snake2player();
+//            game.setEnemy();
+//            game.setPowerUp();
+            game.getChildren().add(SnakeHead.create());
+            game.getChildren().add(game.addVBox(game));
             System.out.println("Started a multi player game.");
         });
 
