@@ -22,8 +22,8 @@ public class Game extends Pane {
     }
 
     public void snake2player() {
-        new SnakeHead(this, 500, 500);
-        new SnakeHead(this, 500, 400);
+        new SnakeHead(this, 400, 400);
+        new SnakeHead(this, 600, 400);
     }
 
     public void setEnemy(){
