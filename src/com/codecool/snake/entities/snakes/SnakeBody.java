@@ -48,10 +48,6 @@ public class SnakeBody extends GameEntity implements Animatable {
         }
         motion(this, 1.2);
 
-/*       MotionBlur motionBlur2 = new MotionBlur();
-        motionBlur2.setRadius(SnakeHead.getSpeed());
-        motionBlur2.setAngle(getRotate());
-        this.setEffect(motionBlur2);*/
     }
 
     public void step() {
