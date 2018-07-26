@@ -18,16 +18,13 @@ public class GameOver {
 
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
-        window.setMinWidth(250);
+        window.setMinWidth(400);
 
         Label label = new Label();
         label.setText(message);
-        Button button = new Button("close the window");
-
-        button.setOnAction(e -> window.close());
 
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(label,button);
+        layout.getChildren().addAll(label);
         layout.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(layout);
