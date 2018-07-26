@@ -45,10 +45,6 @@ public class Game extends Pane {
 
     }
 
-    public void oneNewPowerUp(){
-        new SimplePowerup(this);
-
-    }
 
     public void start() {
         Scene scene = getScene();

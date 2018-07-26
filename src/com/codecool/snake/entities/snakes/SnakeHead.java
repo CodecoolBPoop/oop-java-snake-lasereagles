@@ -1,12 +1,12 @@
 package com.codecool.snake.entities.snakes;
 
+import com.codecool.snake.Game;
+import com.codecool.snake.GameOver;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Interactable;
-import com.codecool.snake.entities.enemies.Enemy;
-import com.codecool.snake.entities.enemies.SimpleEnemy;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -48,7 +48,8 @@ public class SnakeHead extends GameEntity implements Animatable {
         snakeHead = this;
         setImage(Globals.snakeHead);
         pane.getChildren().add(this);
-        addPart(4);
+        addPart(1);
+        GameOver.highscore += 10;
     }
 
     public void step() {
@@ -83,6 +84,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         if (isOutOfBounds() || health <= 0) {
             System.out.println("Game Over");
             Globals.gameLoop.stop();
+            GameOver.gameover("Game over", "Game Over");
 
 
         }

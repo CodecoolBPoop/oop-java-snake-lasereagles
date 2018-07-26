@@ -12,6 +12,9 @@ import javafx.scene.control.*;
 
 public class GameOver {
 
+
+    public static int highscore;
+
     public static void gameover(String title, String message) {
 
         Stage window = new Stage();
