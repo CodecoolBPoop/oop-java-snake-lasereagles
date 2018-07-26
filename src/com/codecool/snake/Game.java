@@ -57,6 +57,9 @@ public class Game extends Pane {
                 case RIGHT:
                     Globals.rightKeyDown = true;
                     break;
+                case UP:
+                    Globals.topKeyDown = true;
+                    break;
             }
         });
 
@@ -67,6 +70,9 @@ public class Game extends Pane {
                     break;
                 case RIGHT:
                     Globals.rightKeyDown = false;
+                    break;
+                case UP:
+                    Globals.topKeyDown = false;
                     break;
             }
         });
