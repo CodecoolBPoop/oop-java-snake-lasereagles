@@ -15,7 +15,7 @@ import javafx.scene.text.FontWeight;
 
 public class SnakeHead extends GameEntity implements Animatable {
 
-    private static float speed = 2;
+    public static float speed = 2;
     private static final float turnRate = 2;
     private GameEntity tail; // the last element. Needed to know where to add the next part.
     public static GameEntity snakeHead;
@@ -35,7 +35,7 @@ public class SnakeHead extends GameEntity implements Animatable {
     public static Label createHealthPlayer2() {
         label2.setText("100");
         label2.setFont(Font.font ("Verdana", FontWeight.EXTRA_BOLD, 20));
-        label2.setLayoutX(0.1 * Globals.WINDOW_WIDTH);
+        label2.setLayoutX(0.3 * Globals.WINDOW_WIDTH);
         return label2;
     }
 

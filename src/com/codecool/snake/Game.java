@@ -107,6 +107,7 @@ public class Game extends Pane {
             Globals.newGameObjects.clear();
 
             SnakeHead.instance = 0;
+            SnakeHead.speed = 2;
             game.getChildren().clear();
             game.start();
             game.snake1player();
@@ -126,6 +127,7 @@ public class Game extends Pane {
             Globals.newGameObjects.clear();
 
             SnakeHead.instance = 0;
+            SnakeHead.speed = 2;
             game.getChildren().clear();
             game.start();
             game.snake2player();
