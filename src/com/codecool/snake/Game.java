@@ -1,7 +1,8 @@
 package com.codecool.snake;
 
 import com.codecool.snake.entities.enemies.*;
-import com.codecool.snake.entities.powerups.SimplePowerup;
+import com.codecool.snake.entities.powerups.HealthRestore;
+import com.codecool.snake.entities.powerups.GDPR;
 import com.codecool.snake.entities.powerups.SpeedUp;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Insets;
@@ -19,7 +20,6 @@ public class Game extends Pane {
     }
 
     public void snake() {
-
         new SnakeHead(this, 500, 500);
     }
 
@@ -29,20 +29,16 @@ public class Game extends Pane {
             new LinkedIn(this);
             new Facebook(this);
             new Amazon(this);
-
-            new SimpleEnemy(this);
         }
     }
 
     public void setPowerUp(){
         for (int i = 0; i < 4; i++) {
-            new SimplePowerup(this);
+            new GDPR(this);
             new SpeedUp(this);
             new HealthRestore(this);
         }
-
     }
-
 
     public void start() {
         Scene scene = getScene();

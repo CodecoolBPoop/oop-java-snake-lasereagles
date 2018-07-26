@@ -10,11 +10,11 @@ import javafx.scene.layout.Pane;
 import java.util.Random;
 
 // a simple powerup that makes the snake grow TODO make other powerups
-public class SimplePowerup extends GameEntity implements Interactable {
+public class GDPR extends GameEntity implements Interactable {
 
-    public SimplePowerup(Pane pane) {
+    public GDPR(Pane pane) {
         super(pane);
-        setImage(Globals.powerupBerry);
+        setImage(Globals.gdpr);
         pane.getChildren().add(this);
 
         Random rnd = new Random();
@@ -35,6 +35,6 @@ public class SimplePowerup extends GameEntity implements Interactable {
     }
 
     public GameEntity createInstance(){
-        return new SimplePowerup(pane);
+        return new GDPR(pane);
     }
 }
