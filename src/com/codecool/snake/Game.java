@@ -3,18 +3,29 @@ package com.codecool.snake;
 import com.codecool.snake.entities.enemies.*;
 import com.codecool.snake.entities.powerups.*;
 import com.codecool.snake.entities.snakes.SnakeHead;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Game extends Pane {
+
+    public static Timeline spawnTimer;
 
     public Game() {
         snake1player();
         setEnemy();
-        setPowerUp();
+        //setPowerUp();
     }
 
     public void snake1player() {
@@ -27,13 +38,24 @@ public class Game extends Pane {
     }
 
     public void setEnemy(){
-        for (int i = 0; i < 3; i++) {
-
-            new LinkedIn(this);
-            new Facebook(this);
-            new Amazon(this);
+        spawnTimer = new Timeline(new KeyFrame(Duration.seconds(10), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                for (int i = 0; i < 3; i++) {
+                    new LinkedIn(Game.this);
+                    new Facebook(Game.this);
+                    new Amazon(Game.this);
+                    new GdprSnakeGrow(Game.this);
+                    new BlockchainSpeedUp(Game.this);
+                    new FirewallHealthRestore(Game.this);
+                }
+            }
+        }));
+        spawnTimer.setCycleCount(Timeline.INDEFINITE);
+        spawnTimer.play();
         }
-    }
+
+
 
     public void setPowerUp(){
         for (int i = 0; i < 4; i++) {
