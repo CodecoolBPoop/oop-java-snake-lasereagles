@@ -14,8 +14,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class SnakeHead extends GameEntity implements Animatable {
 
