@@ -24,8 +24,7 @@ public class Game extends Pane {
 
     public Game() {
         snake1player();
-        setEnemy();
-        //setPowerUp();
+        setTimer();
     }
 
     public void snake1player() {
@@ -37,24 +36,20 @@ public class Game extends Pane {
         new SnakeHead(this, 600, 400);
     }
 
-    public void setEnemy(){
-        spawnTimer = new Timeline(new KeyFrame(Duration.seconds(10), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                for (int i = 0; i < 3; i++) {
-                    new LinkedIn(Game.this);
-                    new Facebook(Game.this);
-                    new Amazon(Game.this);
-                    new GdprSnakeGrow(Game.this);
-                    new BlockchainSpeedUp(Game.this);
-                    new FirewallHealthRestore(Game.this);
-                }
-            }
-        }));
-        spawnTimer.setCycleCount(Timeline.INDEFINITE);
+    public void setTimer(){
+        spawnTimer = new Timeline(new KeyFrame(Duration.seconds(10),
+                ae -> setEnemy()));
         spawnTimer.play();
-        }
+    }
 
+    public void setEnemy(){
+        for (int i = 0; i < 3; i++) {
+            new LinkedIn(Game.this);
+            new Facebook(Game.this);
+            new Amazon(Game.this);
+        }
+        setPowerUp();
+    }
 
 
     public void setPowerUp(){
@@ -63,7 +58,6 @@ public class Game extends Pane {
             new BlockchainSpeedUp(this);
             new FirewallHealthRestore(this);
         }
-
     }
 
     public void start() {
