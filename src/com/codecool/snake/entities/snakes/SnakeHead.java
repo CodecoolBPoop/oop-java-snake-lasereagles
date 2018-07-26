@@ -22,13 +22,10 @@ public class SnakeHead extends GameEntity implements Animatable {
     public static int instance = 0;
     private int health;
     public static Label label = new Label("100");
-    public static ProgressBar p2 = new ProgressBar();
     private static double dirrection; // TODO If we want one more snace we need one more static field..I know its not th best way
 
-    public static ProgressBar createBar() {
-        p2.setProgress(0.6);
-        return p2;
-    }
+
+
     public static Label label2 = new Label("100");
     private String name = "snake";
 
@@ -66,16 +63,8 @@ public class SnakeHead extends GameEntity implements Animatable {
 
     public void step() {
         double dir = getRotate();
-        if (Globals.leftKeyDown) {
-            dir = dir - turnRate;
-            dirrection = dir;
-        }
-        if (Globals.rightKeyDown) {
-            dir = dir + turnRate;
-            dirrection = dir;
-        }
-        if(Globals.topKeyDown) {
-            new FireBall(pane);
+
+
 
         if (name.equals("snake0")) {
             if (Globals.leftKeyDown) {
@@ -85,6 +74,8 @@ public class SnakeHead extends GameEntity implements Animatable {
             if (Globals.rightKeyDown) {
                 dir = dir + turnRate;
             }
+            if(Globals.topKeyDown) {
+                new FireBall(pane);
         }
 
         if (name.equals("snake1")) {
@@ -95,6 +86,9 @@ public class SnakeHead extends GameEntity implements Animatable {
             if (Globals.dKeyDown) {
                 System.out.println("d");
                 dir = dir + turnRate;
+            }
+            if(Globals.topKeyDown) {
+                System.out.println("nicetry");
             }
         }
 
@@ -132,6 +126,7 @@ public class SnakeHead extends GameEntity implements Animatable {
                 Globals.gameLoop.stop();
                 GameOver.gameover("Game over");
             }
+        }
         }
     }
 
