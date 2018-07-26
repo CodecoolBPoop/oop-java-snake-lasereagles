@@ -1,9 +1,7 @@
 package com.codecool.snake;
 
 import com.codecool.snake.entities.enemies.*;
-import com.codecool.snake.entities.powerups.HealthRestore;
-import com.codecool.snake.entities.powerups.GDPR;
-import com.codecool.snake.entities.powerups.SpeedUp;
+import com.codecool.snake.entities.powerups.*;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -40,9 +38,9 @@ public class Game extends Pane {
 
     public void setPowerUp(){
         for (int i = 0; i < 4; i++) {
-            new GDPR(this);
-            new SpeedUp(this);
-            new HealthRestore(this);
+            new GdprSnakeGrow(this);
+            new BlockchainSpeedUp(this);
+            new FirewallHealthRestore(this);
         }
     }
 

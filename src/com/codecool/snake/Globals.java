@@ -19,8 +19,8 @@ public class Globals {
     public static Image facebook = new Image("facebook.png");
     public static Image amazon = new Image("amazon.png");
     public static Image gdpr = new Image("gdpr.png");
-    public static Image coffe = new Image("coffee-cup.png");
-    public static Image chili = new Image("chili.png");
+    public static Image blockchain = new Image("blockchain.png");
+    public static Image firewall = new Image("firewall.png");
 
     //.. put here the other images you want to use
 
