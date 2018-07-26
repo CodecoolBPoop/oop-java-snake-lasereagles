@@ -34,8 +34,8 @@ public class FireBall extends GameEntity implements Animatable {
 
     public void setPosition(){
         Position snakHeadPos = Position.getSnakePos(pane);
-        System.out.println(snakHeadPos.x);
-        System.out.println(snakHeadPos.y);
+//        System.out.println(snakHeadPos.x);
+//        System.out.println(snakHeadPos.y);
 
         this.setX(snakHeadPos.x);
         this.setY(snakHeadPos.y);

@@ -19,7 +19,6 @@ public class Position {
 
         int index = pane.getChildren().indexOf(SnakeHead.snakeHead);
         SnakeHead snake = (SnakeHead) pane.getChildren().get(index);
-        System.out.println("snake X " +        snake.getName());
         return new Position(snake.getX(), snake.getY());
     }
 

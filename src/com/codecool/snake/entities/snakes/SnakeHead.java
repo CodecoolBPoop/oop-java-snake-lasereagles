@@ -6,11 +6,15 @@ import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Interactable;
+import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+
+import java.util.List;
 
 
 public class SnakeHead extends GameEntity implements Animatable {
@@ -24,10 +28,6 @@ public class SnakeHead extends GameEntity implements Animatable {
     public static Label label = new Label("100");
     public static Label label2 = new Label("100");
     private static double direction;
-
-    public String getName() {
-        return name;
-    }
 
     private String name = "snake";
 
@@ -45,7 +45,6 @@ public class SnakeHead extends GameEntity implements Animatable {
         return label2;
     }
 
-
     public SnakeHead(Pane pane, int xc, int yc) {
         super(pane);
         setX(xc);
@@ -59,7 +58,6 @@ public class SnakeHead extends GameEntity implements Animatable {
         this.name = name+instance;
         System.out.println(this.name);
         instance++;
-        System.out.println("startinstance"+instance);
     }
 
     public double getSnakeDirection() {
@@ -72,7 +70,6 @@ public class SnakeHead extends GameEntity implements Animatable {
 
         if (name.equals("snake0")) {
             if (Globals.leftKeyDown) {
-                System.out.println("left");
                 dir = dir - turnRate;
             }
             if (Globals.rightKeyDown) {
@@ -85,15 +82,15 @@ public class SnakeHead extends GameEntity implements Animatable {
 
         if (name.equals("snake1")) {
             if (Globals.aKeyDown) {
-                System.out.println("a");
+
                 dir = dir - turnRate;
             }
             if (Globals.dKeyDown) {
-                System.out.println("d");
+
                 dir = dir + turnRate;
             }
             if(Globals.topKeyDown) {
-                System.out.println("nicetry");
+                System.out.println("nice try");
             }
         }
 
@@ -126,7 +123,15 @@ public class SnakeHead extends GameEntity implements Animatable {
             }
             instance--;
             destroy();
-            System.out.println("deathinstance" + instance);
+            this.tail.destroy();
+
+/*
+            Todo: destroy children of head
+            List<Node> children = pane.getChildren();
+            ((ObservableList<Node>) children).remove(children.indexOf(this), children.indexOf(this.tail));
+*/
+
+
             if (instance==0) {
                 Globals.gameLoop.stop();
                 GameOver.gameover("Game over");

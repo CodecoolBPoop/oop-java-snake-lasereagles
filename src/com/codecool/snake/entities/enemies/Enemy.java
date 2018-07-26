@@ -16,8 +16,10 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
     protected Point2D heading;
     private int damage;
     private double direction;
+
     private int speed;
 
+    private float speed2;
     public Enemy(Pane pane) {
         super(pane);
     }
@@ -34,6 +36,14 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public void setSpeed2(float speed) {
+        this.speed2 = speed;
+    }
+
+    public float getSpeed2() {
+        return speed2;
     }
 
     public int getDamage() {
