@@ -75,10 +75,10 @@ public class Game extends Pane {
                     Globals.rightKeyDown = false;
                     break;
                 case A:
-                    Globals.aKeyDown  = true;
+                    Globals.aKeyDown  = false;
                     break;
                 case D:
-                    Globals.dKeyDown  = true;
+                    Globals.dKeyDown  = false;
                     break;
             }
         });
@@ -128,7 +128,6 @@ public class Game extends Pane {
             Globals.gameObjects.clear();
             Globals.oldGameObjects.clear();
             Globals.newGameObjects.clear();
-
 
             SnakeHead.instance = 0;
             game.getChildren().clear();

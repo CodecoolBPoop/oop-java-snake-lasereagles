@@ -79,6 +79,7 @@ public class SnakeHead extends GameEntity implements Animatable {
                 dir = dir - turnRate;
             }
             if (Globals.dKeyDown) {
+                System.out.println("d");
                 dir = dir + turnRate;
             }
         }
@@ -96,7 +97,7 @@ public class SnakeHead extends GameEntity implements Animatable {
             if (getBoundsInParent().intersects(entity.getBoundsInParent())) {
                 if (entity instanceof Interactable) {
                     Interactable interactable = (Interactable) entity;
-                    //entity.createInstance();
+                    entity.createInstance();
                     interactable.apply(this);
                     System.out.println(interactable.getMessage());
                 }
