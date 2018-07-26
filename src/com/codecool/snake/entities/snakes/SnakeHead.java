@@ -10,6 +10,7 @@ import com.codecool.snake.entities.enemies.SimpleEnemy;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.effect.MotionBlur;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -18,6 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SnakeHead extends GameEntity implements Animatable {
+
+    public static float getSpeed() {
+        return speed;
+    }
 
     private static float speed = 2;
     private static final float turnRate = 2;
