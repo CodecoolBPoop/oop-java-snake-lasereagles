@@ -2,7 +2,6 @@ package com.codecool.snake.entities.snakes;
 
 import com.codecool.snake.Globals;
 import com.codecool.snake.Position;
-import com.codecool.snake.RandomNumber;
 import com.codecool.snake.Utils;
 import com.codecool.snake.entities.Animatable;
 import com.codecool.snake.entities.GameEntity;
@@ -26,6 +25,8 @@ public class FireBall extends GameEntity implements Animatable {
         setPosition();
     }
 
+
+
     protected void setDirection(){ // TODO this is not working yet
         this.direction = SnakeHead.getSnaceDirection();
         this.setRotate(this.direction);
@@ -48,6 +49,18 @@ public class FireBall extends GameEntity implements Animatable {
         }
         this.setX(getX() + this.heading.getX());
         this.setY(getY() + this.heading.getY());
+
+        for (GameEntity entity: Globals.getGameObjects()) {
+            if (getBoundsInParent().intersects(entity.getBoundsInParent())) {
+                if (entity instanceof Interactable) {
+                    Interactable interactable = (Interactable) entity;
+                    entity.createInstance();
+                    interactable.fireBallApply(this);
+                    this.destroy();
+                    System.out.println(interactable.getMessage());
+                }
+            }
+        }
 
     }
 

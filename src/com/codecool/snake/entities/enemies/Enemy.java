@@ -5,6 +5,7 @@ import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.entities.Animatable;
 
 import com.codecool.snake.entities.Interactable;
+import com.codecool.snake.entities.snakes.FireBall;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
@@ -52,6 +53,12 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
     @Override
     public void apply(SnakeHead player) {
         player.changeHealth(-this.getDamage());
+        destroy();
+    }
+
+    @Override
+    public void fireBallApply(FireBall fireBall){
+        System.out.println("The fire is hot");
         destroy();
     }
 

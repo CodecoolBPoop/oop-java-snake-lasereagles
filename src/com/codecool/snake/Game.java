@@ -57,7 +57,7 @@ public class Game extends Pane {
                 case RIGHT:
                     Globals.rightKeyDown = true;
                     break;
-                case UP:
+                case W:
                     Globals.topKeyDown = true;
                     break;
             }
@@ -71,7 +71,7 @@ public class Game extends Pane {
                 case RIGHT:
                     Globals.rightKeyDown = false;
                     break;
-                case UP:
+                case W:
                     Globals.topKeyDown = false;
                     break;
             }
