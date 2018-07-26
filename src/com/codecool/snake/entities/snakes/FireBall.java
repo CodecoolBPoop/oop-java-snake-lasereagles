@@ -55,7 +55,7 @@ public class FireBall extends GameEntity implements Animatable {
                     interactable.fireBallApply(this);
                     this.destroy();
                     System.out.println(interactable.getMessage());
-                    entity.createInstance();
+                    //entity.createInstance();
                 }
             }
         }

@@ -23,7 +23,7 @@ public class Game extends Pane {
     }
 
     public void setEnemy(){
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 4; i++) {
 
             new LinkedIn(this);
             new Facebook(this);
@@ -37,11 +37,6 @@ public class Game extends Pane {
         for (int i = 0; i < 4; i++) {
             new SimplePowerup(this);
         }
-
-    }
-
-    public void oneNewPowerUp(){
-        new SimplePowerup(this);
 
     }
 
