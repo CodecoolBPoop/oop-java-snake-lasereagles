@@ -15,7 +15,7 @@ public class GameOver {
 
     public static int highscore;
 
-    public static void gameover(String title, String message) {
+    public static void gameover(String title) {
 
         Stage window = new Stage();
 
@@ -24,7 +24,8 @@ public class GameOver {
         window.setMinWidth(400);
 
         Label label = new Label();
-        label.setText(message);
+        String StrHighScore = Integer.toString(highscore);
+        label.setText("Your HighScore is " + StrHighScore);
 
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label);

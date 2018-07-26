@@ -48,8 +48,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         snakeHead = this;
         setImage(Globals.snakeHead);
         pane.getChildren().add(this);
-        addPart(1);
-        GameOver.highscore += 10;
+        addPart(4);
     }
 
     public void step() {
@@ -84,7 +83,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         if (isOutOfBounds() || health <= 0) {
             System.out.println("Game Over");
             Globals.gameLoop.stop();
-            GameOver.gameover("Game over", "Game Over");
+            GameOver.gameover("Game over");
 
 
         }
