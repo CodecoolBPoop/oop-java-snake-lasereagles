@@ -110,14 +110,12 @@ public class Game extends Pane {
 
             SnakeHead.instance = 0;
             game.getChildren().clear();
-            //System.out.println("lefut");
             game.start();
             game.snake1player();
             game.setEnemy();
             game.setPowerUp();
             game.getChildren().add(SnakeHead.create());
             game.getChildren().add(game.addVBox(game));
-            System.out.println("Started a single player game.");
         });
 
         Button buttonMultiPlayer = new Button("2 Players");
@@ -133,13 +131,13 @@ public class Game extends Pane {
             game.getChildren().clear();
             game.start();
             game.snake2player();
-//            game.setEnemy();
-//            game.setPowerUp();
+            game.setEnemy();
+            game.setPowerUp();
             game.getChildren().add(SnakeHead.create());
             game.getChildren().add(SnakeHead.createHealthPlayer2());
 
             game.getChildren().add(game.addVBox(game));
-            System.out.println("Started a multi player game.");
+
         });
 
         vbox.getChildren().addAll(buttonSinglePlayer, buttonMultiPlayer);
