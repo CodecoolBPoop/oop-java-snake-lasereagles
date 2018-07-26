@@ -26,6 +26,7 @@ public class SnakeHead extends GameEntity implements Animatable {
     private int health;
     public static Label label = new Label("100");
     public static ProgressBar p2 = new ProgressBar();
+    private static double dirrection;
 
     public static ProgressBar createBar() {
         p2.setProgress(0.6);
@@ -55,9 +56,11 @@ public class SnakeHead extends GameEntity implements Animatable {
         double dir = getRotate();
         if (Globals.leftKeyDown) {
             dir = dir - turnRate;
+            dirrection = dir;
         }
         if (Globals.rightKeyDown) {
             dir = dir + turnRate;
+            dirrection = dir;
         }
         if(Globals.topKeyDown) {
             new FireBall(pane);
@@ -112,5 +115,9 @@ public class SnakeHead extends GameEntity implements Animatable {
   
     public void changeSpeed(int increase){
         speed += increase;
+    }
+
+    public static double getSnaceDirection(){
+        return dirrection;
     }
 }

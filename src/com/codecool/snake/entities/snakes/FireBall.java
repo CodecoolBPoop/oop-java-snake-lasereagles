@@ -26,8 +26,8 @@ public class FireBall extends GameEntity implements Animatable {
         setPosition();
     }
 
-    protected void setDirection(){
-        this.direction = RandomNumber.getRandomDouble() * 360;
+    protected void setDirection(){ // TODO this is not working yet
+        this.direction = SnakeHead.getSnaceDirection();
         this.setRotate(this.direction);
         this.heading = Utils.directionToVector(this.direction, this.speed);  //what is the difference between line 31 and 32?
     }
