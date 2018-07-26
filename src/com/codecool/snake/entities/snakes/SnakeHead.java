@@ -22,10 +22,6 @@ public class SnakeHead extends GameEntity implements Animatable {
     public static int instance = 0;
     private int health;
     public static Label label = new Label("100");
-    private static double dirrection; // TODO If we want one more snace we need one more static field..I know its not th best way
-
-
-
     public static Label label2 = new Label("100");
     private String name = "snake";
 
@@ -64,8 +60,6 @@ public class SnakeHead extends GameEntity implements Animatable {
     public void step() {
         double dir = getRotate();
 
-
-
         if (name.equals("snake0")) {
             if (Globals.leftKeyDown) {
                 System.out.println("left");
@@ -76,6 +70,7 @@ public class SnakeHead extends GameEntity implements Animatable {
             }
             if(Globals.topKeyDown) {
                 new FireBall(pane);
+            }
         }
 
         if (name.equals("snake1")) {
@@ -127,7 +122,6 @@ public class SnakeHead extends GameEntity implements Animatable {
                 GameOver.gameover("Game over");
             }
         }
-        }
     }
 
     public void addPart(int numParts) {
@@ -155,7 +149,5 @@ public class SnakeHead extends GameEntity implements Animatable {
         speed += increase;
     }
 
-    public static double getSnaceDirection(){
-        return dirrection;
-    }
+
 }
