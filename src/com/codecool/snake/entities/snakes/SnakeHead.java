@@ -25,6 +25,7 @@ public class SnakeHead extends GameEntity implements Animatable {
     public static int instance = 0;
     private int health;
     public static Label label = new Label("100");
+    public static Label label2 = new Label("100");
     private String name = "snake";
 
     public static Label create() {
@@ -33,6 +34,14 @@ public class SnakeHead extends GameEntity implements Animatable {
         label.setLayoutX(0.5 * Globals.WINDOW_WIDTH);
         return label;
     }
+
+    public static Label createHealthPlayer2() {
+        label2.setText("100");
+        label2.setFont(Font.font ("Verdana", FontWeight.EXTRA_BOLD, 20));
+        label2.setLayoutX(0.1 * Globals.WINDOW_WIDTH);
+        return label2;
+    }
+
 
     public SnakeHead(Pane pane, int xc, int yc) {
         super(pane);
@@ -54,7 +63,7 @@ public class SnakeHead extends GameEntity implements Animatable {
     public void step() {
         double dir = getRotate();
 
-        if (name.equals("snake1")) {
+        if (name.equals("snake0")) {
             if (Globals.leftKeyDown) {
                 System.out.println("left");
                 dir = dir - turnRate;
@@ -64,7 +73,7 @@ public class SnakeHead extends GameEntity implements Animatable {
             }
         }
 
-        if (name.equals("snake2")) {
+        if (name.equals("snake1")) {
             if (Globals.aKeyDown) {
                 System.out.println("a");
                 dir = dir - turnRate;

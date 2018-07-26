@@ -137,6 +137,8 @@ public class Game extends Pane {
 //            game.setEnemy();
 //            game.setPowerUp();
             game.getChildren().add(SnakeHead.create());
+            game.getChildren().add(SnakeHead.createHealthPlayer2());
+
             game.getChildren().add(game.addVBox(game));
             System.out.println("Started a multi player game.");
         });
