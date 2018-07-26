@@ -26,7 +26,7 @@ public class SnakeHead extends GameEntity implements Animatable {
     private int health;
     public static Label label = new Label("100");
     public static ProgressBar p2 = new ProgressBar();
-    private static double dirrection;
+    private static double dirrection; // TODO If we want one more snace we need one more static field
 
     public static ProgressBar createBar() {
         p2.setProgress(0.6);
