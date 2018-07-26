@@ -10,9 +10,6 @@ public class StageSetter {
 
     public static Stage setStage(Game game, Stage primaryStage) {
 
-   //     BorderPane root = new BorderPane();
-  //      root.setTop(MenuFactory.getMenuBar(game, primaryStage));
-  //      root.setBottom(game);
         game.setGameBackground(Globals.background);
         game.getChildren().add(SnakeHead.create());
         game.getChildren().add(game.addVBox(game));

@@ -4,12 +4,12 @@ import com.codecool.snake.Globals;
 import com.codecool.snake.entities.GameEntity;
 import javafx.scene.layout.Pane;
 
-public class Spotify extends Enemy  {
+public class Amazon extends Enemy {
 
-    public Spotify(Pane pane) {
+    public Amazon(Pane pane) {
         super(pane);
         this.setDamage(25);
-        setImage(Globals.spotify);
+        setImage(Globals.amazon);
         pane.getChildren().add(this);
         this.setSpeed(2);
         this.setSpawnPos();
@@ -17,6 +17,6 @@ public class Spotify extends Enemy  {
     }
 
     public GameEntity createInstance(){
-        return new Spotify(pane);
+        return new Amazon(pane);
     }
 }
