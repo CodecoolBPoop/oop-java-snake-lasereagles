@@ -23,6 +23,12 @@ public class SnakeHead extends GameEntity implements Animatable {
     private int health;
     public static Label label = new Label("100");
     public static Label label2 = new Label("100");
+    private static double direction;
+
+    public String getName() {
+        return name;
+    }
+
     private String name = "snake";
 
     public static Label create() {
@@ -56,6 +62,10 @@ public class SnakeHead extends GameEntity implements Animatable {
         System.out.println("startinstance"+instance);
     }
 
+    public double getSnakeDirection() {
+        double direction = getRotate();
+        return direction;
+    }
 
     public void step() {
         double dir = getRotate();

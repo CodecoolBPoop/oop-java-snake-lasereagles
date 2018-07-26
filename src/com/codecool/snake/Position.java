@@ -16,8 +16,10 @@ public class Position {
     }
 
     public static Position getSnakePos(Pane pane) {
+
         int index = pane.getChildren().indexOf(SnakeHead.snakeHead);
         SnakeHead snake = (SnakeHead) pane.getChildren().get(index);
+        System.out.println("snake X " +        snake.getName());
         return new Position(snake.getX(), snake.getY());
     }
 

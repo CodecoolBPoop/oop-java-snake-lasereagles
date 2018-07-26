@@ -24,10 +24,12 @@ public class FireBall extends GameEntity implements Animatable {
         setPosition();
     }
 
-    protected void setDirection(){
-        //this.direction = SnakeHead.getSnaceDirection();
+    public void setDirection(){
+        int index = pane.getChildren().indexOf(SnakeHead.snakeHead);
+        SnakeHead snake = (SnakeHead) pane.getChildren().get(index);
+        this.direction = snake.getSnakeDirection();
         this.setRotate(this.direction);
-        this.heading = Utils.directionToVector(this.direction, this.speed);  //what is the difference between line 31 and 32?
+        this.heading = Utils.directionToVector(this.direction, this.speed);
     }
 
     public void setPosition(){
