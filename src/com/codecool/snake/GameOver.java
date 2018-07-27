@@ -21,6 +21,7 @@ public class GameOver {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
         window.setMinWidth(400);
+        window.setMinHeight(200);
 
         Button buttonClose = new Button("Close");
         buttonClose.setPrefSize(100, 20);

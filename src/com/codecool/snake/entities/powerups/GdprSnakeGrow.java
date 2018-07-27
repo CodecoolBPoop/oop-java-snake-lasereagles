@@ -4,6 +4,7 @@ import com.codecool.snake.GameOver;
 import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.Globals;
 import com.codecool.snake.entities.Interactable;
+import com.codecool.snake.entities.snakes.FireBall;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.scene.layout.Pane;
 
@@ -27,6 +28,12 @@ public class GdprSnakeGrow extends GameEntity implements Interactable {
         snakeHead.addPart(1);
         destroy();
         GameOver.highscore += 10;
+    }
+
+    @Override
+    public void fireBallApply(FireBall fireBall){
+        System.out.println("The fire is hot");
+        destroy();
     }
 
     @Override

@@ -14,7 +14,17 @@ import java.util.Queue;
 
 public class SnakeBody extends GameEntity implements Animatable {
 
+    int index = pane.getChildren().indexOf(SnakeHead.snakeHead);
+    SnakeHead snake = (SnakeHead) pane.getChildren().get(index);
+
     public void motion(SnakeBody snakeb, Double radius) {
+        MotionBlur motionBlur2 = new MotionBlur();
+        motionBlur2.setRadius(radius);
+        motionBlur2.setAngle(getRotate());
+        snakeb.setEffect(motionBlur2);
+    }
+
+    public void motion(SnakeHead snakeb, Double radius) {
         MotionBlur motionBlur2 = new MotionBlur();
         motionBlur2.setRadius(radius);
         motionBlur2.setAngle(getRotate());
@@ -55,7 +65,8 @@ public class SnakeBody extends GameEntity implements Animatable {
         Vec2d pos = history.poll(); // remove the oldest item from the history
         setX(pos.x);
         setY(pos.y);
-        motion(this, getX());
+        motion(this, getX()/20);
+        motion(snake, getX()/25);
         history.add(new Vec2d(parent.getX(), parent.getY())); // add the parent's current position to the beginning of the history
     }
 

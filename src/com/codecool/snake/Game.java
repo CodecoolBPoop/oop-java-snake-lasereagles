@@ -22,10 +22,9 @@ public class Game extends Pane {
     }
 
     public void snake2player() {
-        new SnakeHead(this, 500, 500);
-        new SnakeHead(this, 500, 400);
+        new SnakeHead(this, 400, 400);
+        new SnakeHead(this, 600, 400);
     }
-
 
     public void setEnemy(){
         for (int i = 0; i < 3; i++) {
@@ -42,6 +41,7 @@ public class Game extends Pane {
             new BlockchainSpeedUp(this);
             new FirewallHealthRestore(this);
         }
+
     }
 
     public void start() {
@@ -61,6 +61,9 @@ public class Game extends Pane {
                 case D:
                     Globals.dKeyDown  = true;
                     break;
+                case W:
+                    Globals.topKeyDown = true;
+                    break;
             }
         });
 
@@ -77,6 +80,9 @@ public class Game extends Pane {
                     break;
                 case D:
                     Globals.dKeyDown  = false;
+                    break;
+                case W:
+                    Globals.topKeyDown = false;
                     break;
             }
         });

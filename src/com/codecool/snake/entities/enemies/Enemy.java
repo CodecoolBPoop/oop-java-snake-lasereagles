@@ -5,6 +5,7 @@ import com.codecool.snake.entities.GameEntity;
 import com.codecool.snake.entities.Animatable;
 
 import com.codecool.snake.entities.Interactable;
+import com.codecool.snake.entities.snakes.FireBall;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
@@ -15,8 +16,10 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
     protected Point2D heading;
     private int damage;
     private double direction;
+
     private int speed;
 
+    private float speed2;
     public Enemy(Pane pane) {
         super(pane);
     }
@@ -35,6 +38,14 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
         this.speed = speed;
     }
 
+    public void setSpeed2(float speed) {
+        this.speed2 = speed;
+    }
+
+    public float getSpeed2() {
+        return speed2;
+    }
+
     public int getDamage() {
         return damage;
     }
@@ -51,6 +62,12 @@ public abstract class Enemy extends GameEntity implements Animatable, Interactab
     @Override
     public void apply(SnakeHead player) {
         player.changeHealth(-this.getDamage());
+        destroy();
+    }
+
+    @Override
+    public void fireBallApply(FireBall fireBall){
+        System.out.println("The fire is hot");
         destroy();
     }
 
