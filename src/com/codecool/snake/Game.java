@@ -5,18 +5,12 @@ import com.codecool.snake.entities.powerups.*;
 import com.codecool.snake.entities.snakes.SnakeHead;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class Game extends Pane {
 
@@ -80,6 +74,9 @@ public class Game extends Pane {
                 case W:
                     Globals.topKeyDown = true;
                     break;
+/*                case M:
+                    Globals.shootingKeyDown[0] = true;
+                    break;*/
             }
         });
 
@@ -135,7 +132,7 @@ public class Game extends Pane {
             game.snake1player();
             game.setEnemy();
             game.setPowerUp();
-            game.getChildren().add(SnakeHead.create());
+            game.getChildren().add(SnakeHead.createHealthLabel());
             game.getChildren().add(game.addVBox(game));
         });
 
@@ -155,7 +152,7 @@ public class Game extends Pane {
             game.snake2player();
             game.setEnemy();
             game.setPowerUp();
-            game.getChildren().add(SnakeHead.create());
+            game.getChildren().add(SnakeHead.createHealthLabel());
             game.getChildren().add(SnakeHead.createHealthPlayer2());
 
             game.getChildren().add(game.addVBox(game));

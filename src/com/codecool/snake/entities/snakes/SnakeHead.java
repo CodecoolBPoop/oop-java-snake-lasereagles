@@ -27,11 +27,10 @@ public class SnakeHead extends GameEntity implements Animatable {
     private int health;
     public static Label label = new Label("100");
     public static Label label2 = new Label("100");
-    private static double direction;
-
     private String name = "snake";
+    private long lastShot;
 
-    public static Label create() {
+    public static Label createHealthLabel() {
         label.setText("100");
         label.setFont(Font.font ("Verdana", FontWeight.EXTRA_BOLD, 20));
         label.setLayoutX(0.5 * Globals.WINDOW_WIDTH);
@@ -58,6 +57,7 @@ public class SnakeHead extends GameEntity implements Animatable {
         this.name = name+instance;
         System.out.println(this.name);
         instance++;
+        lastShot = System.currentTimeMillis();
     }
 
     public double getSnakeDirection() {
@@ -75,22 +75,23 @@ public class SnakeHead extends GameEntity implements Animatable {
             if (Globals.rightKeyDown) {
                 dir = dir + turnRate;
             }
-            if(Globals.topKeyDown) {
-                new FireBall(pane);
+            if (Globals.topKeyDown) {
+                if(System.currentTimeMillis() - lastShot > 250) {
+                    new FireBall(pane);
+                    lastShot = System.currentTimeMillis();
+                }
             }
         }
 
         if (name.equals("snake1")) {
             if (Globals.aKeyDown) {
-
                 dir = dir - turnRate;
             }
             if (Globals.dKeyDown) {
-
                 dir = dir + turnRate;
             }
-            if(Globals.topKeyDown) {
-                System.out.println("nice try");
+            if (Globals.topKeyDown) {
+                new FireBall(pane);
             }
         }
 

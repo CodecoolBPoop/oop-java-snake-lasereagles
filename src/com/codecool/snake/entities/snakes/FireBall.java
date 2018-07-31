@@ -17,11 +17,12 @@ public class FireBall extends GameEntity implements Animatable {
 
     public FireBall(Pane pane){
         super(pane);
-        this.speed = 5 ;
-        setDirection();
+        this.speed = 5;
         setImage(Globals.fire);
         pane.getChildren().add(this);
+        setDirection();
         setPosition();
+        //getLastShotsTime(); System.currentTimeMillis();
     }
 
     public void setDirection(){
@@ -48,7 +49,6 @@ public class FireBall extends GameEntity implements Animatable {
         }
         this.setX(getX() + this.heading.getX());
         this.setY(getY() + this.heading.getY());
-
 
         for (GameEntity entity: Globals.getGameObjects()) {
             if (getBoundsInParent().intersects(entity.getBoundsInParent())) {
